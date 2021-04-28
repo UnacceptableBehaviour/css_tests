@@ -1,21 +1,21 @@
 <style>
     /* CSS selectot reference here */
-    /* https://www.w3schools.com/cssref/css_selectors.asp */    
-    
-    
+    /* https://www.w3schools.com/cssref/css_selectors.asp */
+
+
     /* CSS Flexbox - 3h26*/                 /* debug understand why? */
     body {                                  /* TODO - THIS HAS NO EFFECT! WHY - entering color into tools works*/
         background-color: #f2fcff;
         font-family: arial, sans-serif;
         font-size: 0.8em;
     }
-    
+
     #debug_target {                         /* w/ <body id='debug_target'> this now works?????? */
         background-color: #f2fcff;
         font-family: arial, sans-serif;
         font-size: 0.8em;
     }
-    
+
     .container {
         background-color: #fff8e8;
         margin: 10px;
@@ -37,12 +37,40 @@
         margin: 10px;
         height: 140px;
         display: flex;                  /* select FLEX BOX display functionality */
-        flex-direction: row;                
+        flex-direction: row;
         flex-wrap: wrap;                /* WRAP ON */
-        justify-content: space-around;                                                  
-        align-items: center;                
-    }    
-    
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .nav-container {
+        background-color: #000000;
+        margin: 1px;
+        height: 42px;
+        display: flex;                  /* select FLEX BOX display functionality */
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bt-nav {
+        height: 34px;
+        width: 40px;
+        margin-left: 1px;
+        margin-right: 1px;
+        padding: 0;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .bt-nav-space {
+        height: 34px;
+        flex-grow: 1;
+    }
+
+
+
 
     /* flex: grow shrink basis - see 4h-4h3m from 3h49 */
     /* instead of separate flex-grow, flex-shrink, flex-basis */
@@ -53,7 +81,7 @@
         text-align: center;
         width: 70px;
         line-height: 50px;
-        margin: 5px;        
+        margin: 5px;
     }
     /* Flex Box REMOTER CONTROL layout - - - - - - - - - - - - - - - - - - - - GRID */
     /* EGS https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
@@ -62,7 +90,7 @@
         rc-item rc-back30s
         rc-item rc-play
         rc-item rc-forward30s
-        rc-item rc-end    
+        rc-item rc-end
         rc-item rc-back2x
         rc-item rc-volume
         rc-item rc-forward2x
@@ -76,7 +104,7 @@
         background-color: #ffe1c7;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;                /* WRAP ON so each 100% row goes onto next line */        
+        flex-wrap: wrap;                /* WRAP ON so each 100% row goes onto next line */
         gap: 4px;   /* space between lines */
     }
     .remote-control .rc-item {
@@ -104,7 +132,7 @@
     .rc-play {
         flex: 5 0 0;                      /* compared to 5 ^ */
     }
-    
+
     /* - - - rc-row-2 - - - */
     .rc-back2x, .rc-forward2x {
         flex: content 0 0;  /* flex-grow: content*/
@@ -112,12 +140,12 @@
     .rc-volume {
         flex: 1 0 0;
     }
-    
+
     /* - - - rc-row-3 - - - */
     .rc-s1, .rc-s2 {
         flex: 1 0 0;        /* flex-grow: 1 = 1:1 equal */
     }
-    
+
     /* FOR THE VOLUME SLIDER */
     .rc-item.rc-volume {
       margin: 0;
@@ -131,7 +159,7 @@
       width: 99%;
       height: 90%;
     }
-    
+
     .slider {
       -webkit-appearance: none;
       width: 100%;
@@ -142,11 +170,11 @@
       -webkit-transition: .2s;
       transition: opacity .2s;
     }
-    
+
     .slider:hover {
       opacity: 1;
     }
-    
+
     .slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -155,13 +183,13 @@
       background: #ff861c;
       cursor: pointer;
     }
-    
+
     .slider::-moz-range-thumb {
       width: 25px;
       height: 2.9em;
       background: #ff861c;
       cursor: pointer;
-    }    
+    }
 
     /* GRID container - REMOTE CONTROL EG - colums & rows - - - - - - - - - - - - - - - - - - - - GRID */
     .remote-control-gd {
@@ -170,9 +198,9 @@
         grid-template-rows: auto auto auto;
         gap: 2px;
     }
-    
+
     /* same as flex box general button design */
-    .remote-control-gd .rcg-item {   
+    .remote-control-gd .rcg-item {
         background-color: #ffe1c7;
         font-size: 2em;
         padding: 8px;
@@ -180,7 +208,7 @@
         border-radius: 6px;
         text-align: center;
     }
-    /* FOR THE VOLUME SLIDER */    
+    /* FOR THE VOLUME SLIDER */
     .rcg-item.rc-volume {
       margin: 0;
       border: 0;
@@ -203,7 +231,7 @@
     .rcg-item.rc-s1         {grid-row: 3 / span 1; grid-column:  1 / span 9;}
     .rcg-item.rc-s2         {grid-row: 3 / span 1; grid-column:  10 / span 9;}
 
-    
+
 
     /* GRID container - colums & rows - - - - - - - - - - - - - - - - - - - - GRID */
     .grid-container {
@@ -220,9 +248,9 @@
         justify-content: start;      /* HORIZONTAL! start center end  - OPOSITE TO FLEX WTF? */
                                             /* space-around, space-evenly, space-between */
         align-content: space-evenly;    /* VERTICLE start, centre , end, */
-                                        /* space-around, space-evenly, space-between */        
+                                        /* space-around, space-evenly, space-between */
     }
-    
+
     .grid-item {
         color: black;
         font-size: 25px;
@@ -239,43 +267,43 @@
         background-color: #000000;
         padding: 2px;
         font-family: arial, sans-serif;
-        font-size: 0.8em;        
+        font-size: 0.8em;
         margin: 5px;
         height: 430px;
         display: grid;                      /* select GRID BOX functionality */
         grid-template-columns: repeat(14, 70px);
         /*grid-column-gap: 10px;*/
-        grid-template-rows: repeat(8, 50px);        
+        grid-template-rows: repeat(8, 50px);
         /*grid-row-gap: 10px;*/
         grid-gap: 4px 4px;         /* grid-gap: row column; specify . . . */
-        
+
     }
-    
+
     .m-poster {
         background-color: #000000;
         padding: 5px;
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
         grid-area: 1 / 1 /  9 / 5;            /*3wx6h - block 70px*/
     }
-    
+
     .m-title {                        /*contains , .m-year, .m-runtime, .m-rating */
         background-color: #FFFFAA;
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
         grid-area: 1 / 5 /  2 / 14;            /* grid  width - image width, 1 high */
     }
-    .m-rating {                        
+    .m-rating {
         background-color: #FFAAAA;
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
-        grid-area: 1 / 14 /  2 / 15;              /* TRHC */ 
-    }    
+        grid-area: 1 / 14 /  2 / 15;              /* TRHC */
+    }
     .m-title, .m-year, .m-runtime, .m-rating { /* set large font */
         font-size: 2em;
     }
-    
+
     .m-synop, .m-cast {
         /* make cast buttons so can guide choices - text for now */
         font-size: 1.5em;
-        /* grid  width - image, 1*/        
+        /* grid  width - image, 1*/
     }
     .m-synop {
         background-color: #FFFFAA;
@@ -295,9 +323,9 @@
     .m-control {
         background-color: #AAFFFF;
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
-        grid-area: 8 / 5 /  span 1 / span 10;            /* grid  width - image width, 1 high */        
+        grid-area: 8 / 5 /  span 1 / span 10;            /* grid  width - image width, 1 high */
     }
-    
+
     /* GRID container - MOVIE CARD - - - - - - - - - - - - - - - - - - - - GRID improved */
     .m1-poster {
         display: inline-flex;
@@ -312,30 +340,30 @@
         height: 100%;
         width: auto;
     }
-    
+
     #m1-ink { color: #f7fdff; background-color: #000000;}
     .m1-title {                        /*contains , .m1-year, .m1-runtime, .m1-rating */
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
         grid-area: 1 / 5 /  2 / 14;            /* grid  width - image width, 1 high */
-        font-size: 3em;        
+        font-size: 3em;
     }
-    .m1-rating {                        
+    .m1-rating {
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
         grid-area: 1 / 14 /  2 / 15;              /* TRHC */
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 3em;   
-    }    
+        font-size: 3em;
+    }
     .m1-title, .m1-year, .m1-runtime, .m1-rating { /* set large font */
         display: flex;
         align-items: center;
     }
-    
+
     .m1-synop, .m1-cast {
         /* make cast buttons so can guide choices - text for now */
         font-size: 1.7em;
-        /* grid  width - image, 1*/        
+        /* grid  width - image, 1*/
     }
     .m1-synop {
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
@@ -349,7 +377,7 @@
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
         grid-area: 7 / 5 /  span 1 / span 10;            /* grid  width - image width, 1 high */
         display: flex;
-        align-items: center;        
+        align-items: center;
     }
     .m1-control {
         /*grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
@@ -377,10 +405,10 @@
      * Synopsis text x1.5
      * Make genre buttons bounding box - 3 margins / 2 (allow 2 rows)
      * Make action buttons right justified full size of bounding box
-     * 
+     *
      * Duplicate this and add variables to replace grid area definintions
     */
-    
+
     /*
      The HTML structure of a grid container has three LEVELS:
 
@@ -395,9 +423,9 @@
           ^
         grid item     (child) - Descendants of a grid container beyond the children are not part of grid layout and will not accept grid properties.
                                 unless using subgrid
-    
+
     */
-    
+
     .oxo {
         display: inline-grid;
         grid-template-rows: 100px 100px 100px;
@@ -414,14 +442,13 @@
         outline-width: 2px;
         justify-content: center;    /* FLEX-HORIZ    center, space-between etc */
         align-items: center;        /* FLEX-VERTICAL flex-start (align top), center, flex-end (align bottom) etc */
-        
+
     }
-    
+
 
     /* watchd up to 4h15 - basically flex justification controls & setting up a gri w/ 5 elemnets*/
     /*https://www.freecodecamp.org/news/learn-css-grid-by-building-5-layouts/*/
-    
-    
+
+
     /* upto 4hmin - https://youtu.be/1Rs2ND1ryYc CSS 6hrs */
 </style>
-

@@ -8,13 +8,13 @@
 {% block content %}
 
 <h2>css course page 4 - flex & grid (needs more flex examples see css course 5 for more grid) - <a href='https://youtu.be/1Rs2ND1ryYc'>upto 4h44min</a></h2>
-<a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/'>Nice Visual Reminder</a> - <a href='https://tobiasahlin.com/blog/common-flexbox-patterns/'>Common patterns</a><br>
+<h3><a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/'>Nice Visual Reminder</a> - <a href='https://tobiasahlin.com/blog/common-flexbox-patterns/'>Common patterns</a></h3><br>
 FLEX BOX - NO WRAP - D shrink 5, C grow 5, B grow 0 (not growable = default), A shrink 0 (not shrinkable - default 1). The point where all boxes are same width = basis setting.
 <div class='container'>
     <!--style order: place - chooses placing order-->
-    
+
     <!--flex: grow shrink basis - see 4h-4h3m from 3h49-->
-    
+
     <!--grow & shrink control the proportion of growth between items-->
     <!--basis - width - force reformat if not enough space IF flex-wrap: wrap else -->
     <!--basis is the width at which the grow / shrink constraint kicks in-->
@@ -22,7 +22,7 @@ FLEX BOX - NO WRAP - D shrink 5, C grow 5, B grow 0 (not growable = default), A 
     <div class='container-item' style='order: 3; flex: 0 1 70px;'>B</div>
     <div class='container-item' style='order: 5; flex: 5 1 70px;'>C</div> <!--NOTE 5 in order letter C-->
     <div class='container-item' style='order: 1; flex: 1 5 70px;'>D</div> <!--NOTE 1 in order letter D-->
-    <div class='container-item' style='order: 2; flex: 1 1 70px;'>E</div>  
+    <div class='container-item' style='order: 2; flex: 1 1 70px;'>E</div>
 </div>
 FLEX BOX - WRAP - Other setting as above.
 <div class='container-2'> <!--flex-wrap: wrap;-->
@@ -30,15 +30,15 @@ FLEX BOX - WRAP - Other setting as above.
     <div class='container-item' style='order: 3; flex: 0 1 70px;'>B</div>
     <div class='container-item' style='order: 5; flex: 5 1 70px;'>C</div> <!--NOTE 5 in order letter C-->
     <div class='container-item' style='order: 1; flex: 1 5 70px;'>D</div> <!--NOTE 1 in order letter D-->
-    <div class='container-item' style='order: 2; flex: 1 1 70px;'>E</div>  
+    <div class='container-item' style='order: 2; flex: 1 1 70px;'>E</div>
 </div>
-FLEX BOX - NO WRAP - <b>align-self:</b> flex-start, center, flex-end (start = top of container end = bottom) 
+FLEX BOX - NO WRAP - <b>align-self:</b> flex-start, center, flex-end (start = top of container end = bottom)
 <div class='container'>
     <div class='container-item' style='order: 4; flex: 1 0 70px; align-self: flex-start;'>A</div>
     <div class='container-item' style='order: 3; flex: 0 1 70px; align-self: center;'>B</div>
     <div class='container-item' style='order: 5; flex: 5 1 70px; align-self: flex-end;'>C</div> <!--NOTE 5 in order letter C-->
     <div class='container-item' style='order: 1; flex: 1 5 70px; align-self: flex-end;'>D</div> <!--NOTE 1 in order letter D-->
-    <div class='container-item' style='order: 2; flex: 1 1 70px; align-self: flex-start;'>E</div>  
+    <div class='container-item' style='order: 2; flex: 1 1 70px; align-self: flex-start;'>E</div>
 </div>
 FLEX BOX - REMOTE CONTROL
 <div class='remote-control'>
@@ -58,7 +58,7 @@ FLEX BOX - REMOTE CONTROL
         </div>
         <div class='rc-item rc-forward2x'>FF</div>
     </div>
-    <div class='rc-row-3'>    
+    <div class='rc-row-3'>
         <div class='rc-item rc-s1'>S1</div>
         <div class='rc-item rc-s2'>S2</div>
     </div>
@@ -68,7 +68,7 @@ FLEX BOX - REMOTE CONTROL
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 </div>
 GRID BOX - REMOTE CONTROL
-<div class='remote-control-gd'>    
+<div class='remote-control-gd'>
     <div class='rcg-item rc-start'>|<</div>
     <div class='rcg-item rc-back30s'>-30s</div>
     <div class='rcg-item rc-play'>PLAY/PAUSE</div>
@@ -78,12 +78,44 @@ GRID BOX - REMOTE CONTROL
     <div class='rcg-item rc-volume'>
         <div class="slidecontainer">
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        </div>        
+        </div>
     </div>
     <div class='rcg-item rc-forward2x'>FF</div>
     <div class='rcg-item rc-s1'>S1</div>
-    <div class='rcg-item rc-s2'>S2</div>    
+    <div class='rcg-item rc-s2'>S2</div>
 </div>
+
+NAVBAR BUTTONS<br>
+<div class='nav-container'>
+  <button id='bt_home' class="bt-nav">
+      <a href=""><img src="/static/PNG/refresh.png" alt="tick" srcset="/static/SVG/refresh.svg"></a>
+  </button>
+
+  <button id='bt_gallery' class="bt-nav">
+      <a href=""><img src="/static/PNG/heart.png" alt="tick" srcset="/static/SVG/heart.svg"></a>
+  </button>
+
+  <button class="bt-nav">
+      <a href=""><img src="/static/PNG/pencil.png" alt="tick" srcset="/static/SVG/pencil.svg"></a>
+  </button>
+
+  <button class="bt-nav">
+      <a href=""><img src="/static/PNG/star.png" alt="tick" srcset="/static/SVG/star.svg"></a>
+  </button>
+
+  <button class="bt-nav">
+      <a href=""><img src="/static/PNG/cog.png" alt="tick" srcset="/static/SVG/cog.svg"></a>
+  </button>
+
+  <inline class="bt-nav-space"></inline>
+
+  <button id="001" class='bt-nav bt-usr bt-usr-inactiv'>U1</button>
+  <button id="002" class='bt-nav bt-usr bt-usr-inactiv'>U2</button>
+  <button id="003" class='bt-nav bt-usr bt-usr-inactiv'>U3</button>
+  <button id="bt-usr-add" class='bt-nav bt-usr bt-usr-inactiv'>+</button>
+</div>
+<br>
+
 
 GRID BOX
 <div class='grid-container'>
@@ -96,7 +128,7 @@ GRID BOX
     <div class='grid-item'>2</div>
     <div class='grid-item'>3</div>
     <div class='grid-item'>4</div>
-    <div class='grid-item'>5</div>        
+    <div class='grid-item'>5</div>
     <div class='grid-item'>4</div>
     <div class='grid-item'>5</div>
     <div class='grid-item'>1</div>
@@ -186,6 +218,6 @@ GRID BOX
 <!--
     <div class='container-item' style='order: 4; flex: 1 1 70px;'>A</div>
     <div class='container-item' style='order: 3; flex: 1 1 70px;'>B</div>
-    <div class='container-item' style='order: 5; flex: 5 1 70px;'>C</div> 
-    <div class='container-item' style='order: 1; flex: 1 5 70px;'>D</div> 
+    <div class='container-item' style='order: 5; flex: 5 1 70px;'>C</div>
+    <div class='container-item' style='order: 1; flex: 1 5 70px;'>D</div>
     <div class='container-item' style='order: 2; flex: 1 1 70px;'>E</div>  -->
