@@ -1,18 +1,18 @@
-<style>
+
   /* CSS selectot reference here */
   /* https://www.w3schools.com/cssref/css_selectors.asp */
-  
+
   /* notes on supporting various devices */
   /* https://stackoverflow.com/questions/13550541/media-min-width-max-width */
   /* for printability @media print{} */
-    
+
   /* GRID CSS - https://youtu.be/CC2HkBZuReY */
   /* https://github.com/devchallenges/CSSGrid-Tutorial - boiler plate for exersize*/
   /* what are fr units? */
   /* See Difference between 'fr' & 'auto' section
      - auto fits content - fr (fraction) fits container */
   /* READ THIS https://www.rawkblog.com/2018/03/css-grid-understanding-grid-gap-and-fr-vs-auto-units/ */
-  
+
   /* vocab
   GRIDS are made up of
   ROWS &
@@ -24,14 +24,14 @@
   IMPLICIT TRACKS are put in automatically by grid
   intersection of two track creates a
   GRID CELL
-  a grid starts w/ a parent containers and 
+  a grid starts w/ a parent containers and
   effects elements ONE LEVEL DOWN
   INCOMPATIBLE:
     display: flex and display: grid
     element cannot be a grid parent and also display: inline-block
-  
+
   NOTES SELECTORS - see css1
-  
+
   .element .symbol {}   any DESCENDANTS of class element of type class=symbol
   EG
   <div class="element">
@@ -42,8 +42,8 @@
   EG
   <div class="element large">
       <div class="symbol" />    < SELECTED
-  </div>  
-  
+  </div>
+
   */
   /* can grid expand to accomodate content - EG synopsis */
   /* Quirks of CSS absolute posistioning: https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437*/
@@ -97,8 +97,8 @@ body {
 .item.wrapper {
   display: grid;
   height: 600px;
-    
-  grid-template-columns: auto auto 1fr 1fr; 
+
+  grid-template-columns: auto auto 1fr 1fr;
   grid-template-rows: 110px auto 1fr 4fr;
   /*
    *
@@ -133,7 +133,7 @@ body {
   grid-column: 2 / span 4;
 
   /*height: 300px;*/
-  height: 75%;  
+  height: 75%;
   background-color: pink;
 }
 .task-2 .item-2 {
@@ -206,7 +206,7 @@ body {
     grid-column: 3 / span 8;
   }
 
-  .task-3-1 .sidebar {    
+  .task-3-1 .sidebar {
     /*grid-row: 2 / 4;*/ /* same as follows */
     grid-row: 2 / span 2;
   }
@@ -217,7 +217,7 @@ body {
   }
 
   .task-3-1 .footer {
-    grid-column: 1 / span 12;    
+    grid-column: 1 / span 12;
   }
 }
 
@@ -231,7 +231,7 @@ body {
   background-color: navajowhite;
   /*font-family: Poppins, sans-serif;   /* No effect - try diferent fonts */
   gap: 24px;
-  
+
   grid-template-rows: auto auto 1fr auto auto auto;
   /* NOTE NO **CKING comma between items!*/
   grid-template-areas: "header"
@@ -269,7 +269,7 @@ body {
 @media (min-width: 720px) {
   .task-3-2.container {
     grid-template-rows: auto auto 1fr auto;
-    
+
     grid-template-areas:
       "header header header"
       "navigation navigation navigation"
@@ -281,7 +281,7 @@ body {
 @media (min-width: 1020px) {
   .task-3-2.container {
     grid-template-rows: auto auto 1fr auto;
-    
+
     grid-template-areas:
       "header header header header"
       "sidebar navigation navigation ads"
@@ -299,7 +299,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   /* minmax(150px, 1fr) min size 150px, max spread out to 1fr */
   /* appear to behave like felxbox? - comment maybe naive */
-  
+
   /* option auto-fill doesn't expand to fill the container */
   /*grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
 }
@@ -332,19 +332,19 @@ body {
 .task-5 .item-2 {
   /*grid-row-start:5;*/
   grid-row: 3 / span 4;
-  grid-column: 3 / span 4;  
+  grid-column: 3 / span 4;
 }
 
 .task-5 .item-3 {
   grid-row: 8 / span 2;
-  grid-column: 8 / span 2;  
+  grid-column: 8 / span 2;
 }
 
 .task-5 .item-4 {
   grid-row: 11 / span 4;
-  grid-column: 3 / span 8;  
+  grid-column: 3 / span 8;
 }
- 
+
 
 /* Task 6 - Movie Card V1- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .grid-movie-card-v1 {
@@ -354,7 +354,7 @@ body {
   font-size: 1.5em;
   color: #faf7e1;
   grid-template-rows: auto auto auto auto auto auto auto;
-    
+
   grid-template-areas:
     "poster  poster  poster"
     "title   title   title"
@@ -364,7 +364,7 @@ body {
     "genre   genre   genre"
     "control control control" ;
 }
-  
+
 .grid-movie-card-v1 .poster {
   grid-area: poster;
 }
@@ -393,7 +393,7 @@ body {
   padding: 3px;
 }
 .grid-movie-card-v1 .genre {
-  grid-area: genre;  
+  grid-area: genre;
 }
 .grid-movie-card-v1 .control {
   grid-area: control;
@@ -409,7 +409,7 @@ body {
   font-size: 1.4em;
 }
 .genre button {
-  margin: 3px;  
+  margin: 3px;
 }
 .control button {
   margin: 3px;
@@ -420,7 +420,7 @@ body {
   .grid-movie-card-v1 {
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: 300px auto auto;
-    
+
     grid-template-areas:
       "poster  title  title   title   rating"
       "poster  title  title   title   runtime"
@@ -444,13 +444,13 @@ body {
     /*justify-content: end;*/
     /*display: flex;*/
     /*align-items: flex-right; */
-  }  
+  }
 }
 
 @media (min-width: 1020px) {
-  
+
 }
-  
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* Task 6 - Movie Card V2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* add variables aka CSS custom properties */
@@ -468,7 +468,7 @@ body {
   font-size: var(--font-size-synopsis);
   color: #faf7e1;
   grid-template-rows: auto auto auto auto auto auto auto;
-    
+
   grid-template-areas:
     "poster  poster  poster"
     "title   title   title"
@@ -511,7 +511,7 @@ body {
   padding: 3px;
 }
 .grid-movie-card-v2 .genre {
-  grid-area: genre;  
+  grid-area: genre;
 }
 .grid-movie-card-v2 .control {
   grid-area: control;
@@ -527,7 +527,7 @@ body {
   font-size: var(--font-size-buttons);
 }
 .genre button {
-  margin: 3px;  
+  margin: 3px;
 }
 .control button {
   margin: 3px;
@@ -538,7 +538,7 @@ body {
   .grid-movie-card-v2 {
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: 300px auto auto;
-    
+
     grid-template-areas:
       "poster  title  title   title   rating"
       "poster  title  title   title   runtime"
@@ -562,14 +562,12 @@ body {
     /*justify-content: end;*/
     /*display: flex;*/
     /*align-items: flex-right; */
-  }  
+  }
 }
 
 @media (min-width: 1020px) {
-  
+
 }
-
-
 
 /* More on Grid: https://www.rawkblog.com/2018/03/css-grid-understanding-grid-gap-and-fr-vs-auto-units/ */
 /* Moz: Grid Template Ares: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas */
