@@ -339,6 +339,18 @@ def css_course_6():
     movies = []
     return render_template('css_course_6.html', movies=movies)
 
+@app.route('/css_course_7', methods=["GET", "POST"])
+def css_course_7():
+    headline_py = "css_course_7.html"
+    movies = []
+    return render_template('css_course_7.html', movies=movies)
+
+@app.route('/css_course_X', methods=["GET", "POST"])
+def css_course_X():
+    headline_py = "css_course_X.html"
+    movies = []
+    return render_template('css_course_X.html', movies=movies)
+
 @app.route('/settings', methods=["GET", "POST"])
 def settings():
     headline_py = "Settings"
