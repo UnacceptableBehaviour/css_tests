@@ -345,6 +345,44 @@ def css_course_7():
     movies = []
     return render_template('css_course_7.html', movies=movies)
 
+@app.route('/slider_tests', methods=["GET", "POST"])
+def slider_tests():
+    movies = []
+    all_slider_movies = []
+    bad_labels = []
+    genres = set()
+
+    print('> > /slider_tests')
+    print(f"media_lib size: {len(media_lib)}")
+    for count, movie in enumerate(media_lib.sorted_by_year()):
+        #pprint(movie)
+        genres.update(movie.info['genres'])
+        if movie.info['title'] == 'And Then There Were None':
+            bad_labels.append(movie)
+        else:
+            if movie.info['hires_image'] == None: movie.info['hires_image'] = 'movie_image_404.png'
+            movie.info['hires_image'] = str(Path(movie.info['hires_image']).name)   # convert full path to name
+            slider_movie = {}
+            slider_movie['id'] = movie.info['id']
+            slider_movie['hires_image'] = movie.info['hires_image']
+            slider_movie['genres'] = movie.info['genres']
+            #slider_movie[''] = movie.info['']
+            all_slider_movies.append(slider_movie)
+
+    # choose a small random set of movies - for quick debug
+    num_of_random_movies = 10
+    for i in range(num_of_random_movies):
+        movies.append(random.choice(all_slider_movies))
+
+    print("Bad Labels encountered:")
+    pprint(bad_labels)
+    print("= = = \n\n")
+    print("Genres encountered:")
+    print(','.join(genres))
+    print("= = = \n")
+
+    return render_template('slider_tests.html', movies=movies)
+
 @app.route('/css_course_X', methods=["GET", "POST"])
 def css_course_X():
     headline_py = "css_course_X.html"

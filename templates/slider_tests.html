@@ -1,0 +1,28 @@
+{% extends 'nav_buttons_thin.html' %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for( 'static', filename='slider_tests.css') }}">
+
+<script>
+  var movies = {{ movies|tojson }};
+  console.log(`slider_tests.html JS movies ${movies.length} - inline`);  // sanity check
+  console.log(movies[0]);  // sanity check
+  console.log(`slider_tests.html - inline CONCLUDED`);  // sanity check
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<h2>slider tests</h2>
+
+
+
+<div id='glider-supercontainer'>
+
+</div>
+
+<div class='poster'><image class='img-poster' src="{{ url_for('static', filename='covers/') }}{{movies[0]['hires_image']}}"></image></div>
+<script src='/static/slider_tests.js'></script>
+{% endblock %}
