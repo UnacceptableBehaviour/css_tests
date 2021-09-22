@@ -2,7 +2,8 @@
 
 {% block header %}
 <link rel="stylesheet" href="{{ url_for( 'static', filename='slider_tests.css') }}">
-
+<link rel="stylesheet" href="{{ url_for( 'static', filename='glider.css') }}">
+<script src="static/glider.js"></script>
 <script>
   var movies = {{ movies|tojson }};
   console.log(`slider_tests.html JS movies ${movies.length} - inline`);  // sanity check

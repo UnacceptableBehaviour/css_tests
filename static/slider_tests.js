@@ -1,6 +1,8 @@
 // add Netflix Style Movie browsing w/ custom categories called moods
 // simple POC
 
+
+
 class Slider {
   constructor(name) {
     this.name = name;
@@ -18,27 +20,36 @@ class Slider {
     this.items.push(diplayItem);
   }
 
-  //buildHTML_start_slider(container, settings){
-  buildHTML_start_slider(){
+  //buildHTML(container, settings){
+  buildHTML(){
     //console.log(settings);
-    let container = document.getElementById("glider-supercontainer");
+    let allGlidersContainer = document.getElementById("glider-supercontainer");
 
-    let gliderHeading = document.createElement('h2');
-    gliderHeading.classList.add('glid-div-heading');
+    let gliderContain = document.createElement('div');
+    gliderContain.classList.add('glider-contain');
+
+    let gliderHeading = document.createElement('div');
+    gliderHeading.classList.add('slider-title');
     gliderHeading.id = `${this.id}-heading`;
     gliderHeading.textContent = this.name;
-    container.appendChild(gliderHeading);
+    gliderContain.appendChild(gliderHeading);
 
     let gliderDiv = document.createElement('div');
     gliderDiv.id = this.id;
-    container.appendChild(gliderDiv);
+    gliderDiv.classList.add('glider');
+    gliderContain.appendChild(gliderDiv);
+
+    allGlidersContainer.appendChild(gliderContain);
 
     console.log(this.id);
     gliderDiv = document.getElementById(this.id);
+    console.log(gliderDiv);
 
     for (var i in this.items) {
       gliderDiv.appendChild(this.createSliderElement(this.items[i]));
     }
+
+
   }
 
   //<div class='poster'>
@@ -50,14 +61,16 @@ class Slider {
     // create basic container w/ image for (now
     let sDiv = document.createElement('div');
     sDiv.classList.add('glid-div-box');
-    sDiv.textContent = `${i.id} - ${i.hires_image}`;
+    sDiv.classList.add('fit-box');
+    sDiv.classList.add('opt-1');
+
+    //sDiv.textContent = `${i.id} - ${i.hires_image}`;
     console.log(`createSliderElement ${i}`);
 
     //let image = document.createElement('picture');
     let image = document.createElement('img');
     let src = `/static/covers/${i.hires_image}`;
-    //image.src = '/static/covers/Brightburn_film_poster.png';//`/static/covers/${i.hires_image}`;
-    image.src = src
+    image.src = src;
 
     sDiv.appendChild(image);
 
@@ -66,6 +79,63 @@ class Slider {
     return sDiv;
   }
 
+  addGlider(id){
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // top ten slider
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    let qry = `#${id}`;
+    window._ = new Glider(document.querySelector(qry), {
+        slidesToShow: 1, //'auto',
+        slidesToScroll: 1,
+        itemWidth: 50,
+        draggable: true,
+        dragVelocity: 3.3,     // default 3.3
+        scrollLock: false,   // set to false to turn off snap to movie
+        dots: '#dots',
+        rewind: true,
+        //arrows: {
+        //    prev: '.glider-prev',
+        //    next: '.glider-next'
+        //},
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToScroll: 'auto',
+                    itemWidth: 162,
+                    slidesToShow: 'auto',
+                    exactWidth: true
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToScroll: 4,
+                    slidesToShow: 4,
+                    dots: false,
+                    arrows: false,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToScroll: 3,
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToScroll: 2,
+                    slidesToShow: 2,
+                    dots: false,
+                    arrows: false,
+                    scrollLock: true
+                }
+            }
+        ]
+    });
+  }
 }
 
 
@@ -115,182 +185,38 @@ console.log(sliders);
 //
 //var superCont = document.getElementById("glider-supercontainer");
 //console.log(superCont);
-console.log(sliders[0]);
-sliders['Drama'].buildHTML_start_slider();
-//ts.buildHTML_start_slider();
+//console.log(sliders[0]);
+//sliders['Drama'].buildHTML();
+//ts.buildHTML();
+
+for (s in sliders) {
+    console.log(`slider: ${s}`);
+    sliders[s].buildHTML();
+}
 
 
+// '#glider-Drama'
+
+window.addEventListener('load',function(){
+  document.querySelector('.glider').addEventListener('glider-slide-visible', function(event){
+      var glider = Glider(this);
+      console.log('Slide Visible %s', event.detail.slide)
+  });
+  document.querySelector('.glider').addEventListener('glider-slide-hidden', function(event){
+      console.log('Slide Hidden %s', event.detail.slide)
+  });
+  document.querySelector('.glider').addEventListener('glider-refresh', function(event){
+      console.log('Refresh')
+  });
+  document.querySelector('.glider').addEventListener('glider-loaded', function(event){
+      console.log('Loaded')
+  });
 
 
+  for (s in sliders) {
+      let div_id = sliders[s].id;
+      console.log(`addGlider: ${div_id} ${s}`);
+      sliders[s].addGlider(div_id);
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div class='poster'><image class='img-poster' src="{{ url_for('static', filename='covers/') }}{{movie_info['hires_image']}}"></image></div>
-
-//// map button id to functions
-//var idToFunc = {
-//  'rcbt-start':   buttonStart,
-//  'rcbt-bak30s':  buttonBak30s,
-//  'rcbt-play':    buttonPlay,
-//  'rcbt-fwd30s':  buttonFwd30s,
-//  'rcbt-end':     buttonEnd,
-//
-//  'rcbt-bak2x':   buttonBak2x,
-//  'rcbt-vol':     buttonVol,
-//  'rcslid-vol':   sliderVol,
-//  'rcbt-fwd2x':   buttonFwd2x,
-//
-//  'rcbt-s1':      buttonS1,
-//  'rcbt-s2':      buttonS2
-//}
-//// ROW 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//function buttonStart(){
-//  console.log('func: button Back to START');
-//  sendCommand('start');
-//}
-//function buttonBak30s(){
-//  console.log('func: button REWIND 30 secs');
-//  sendCommand('bak30s');
-//}
-//
-//function buttonPlay(){
-//  if ((Remote.state === ST_PAUSED) ||
-//      (Remote.state === ST_FF2X)   ||
-//      (Remote.state === ST_RR2X))  {
-//    Remote.state = ST_PLAYING ;
-//    console.log(`func: button PLAY - state:${Remote.state}`);
-//    document.getElementById("rcbt-play").innerText = 'PAUSE';
-//    sendCommand('play');
-//
-//  } else if (Remote.state === ST_PLAYING) {
-//    Remote.state = ST_PAUSED ;
-//    console.log(`func: button PAUSED - state:${Remote.state}`);
-//    document.getElementById("rcbt-play").innerText = 'PLAY';
-//    sendCommand('pause');
-//  }
-//  console.log('buttonPlay: movie');
-//  console.log(movie);
-//  // PLAY / PAUSE based on state
-//  // update state & button ICON
-//
-//}
-//function buttonFwd30s(){
-//  console.log('func: button FORWARD 30 secs');
-//  sendCommand('fwd30s');
-//}
-//function buttonEnd(){
-//  console.log('func: button Goto END');
-//  sendCommand('end');
-//}
-//
-//// ROW 2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//function buttonBak2x(){
-//  Remote.state = ST_RR2X;
-//  console.log('func: button REWIND 2x');
-//  sendCommand('bak2x');
-//}
-//function buttonVol(){
-//  Remote.vol = document.getElementById("rcslid-vol").value;
-//  console.log(`func: button VOL -  ${Remote.vol}`);
-//  sendCommand('vol'); // TODO add slider move event listener
-//}
-//function sliderVol(){
-//  Remote.vol = document.getElementById("rcslid-vol").value;
-//  console.log(`func: button VOL slider ${Remote.vol}`);
-//  sendCommand('vol'); // TODO add slider move event listener
-//}
-//function buttonFwd2x(){
-//  Remote.state = ST_FF2X;
-//  console.log('func: button FORWARD 2x');
-//  sendCommand('fwd2x');
-//}
-//
-//// ROW 3 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//function buttonS1(){
-//  console.log('func: button S1');
-//  sendCommand('s1');
-//}
-//function buttonS2(){
-//  console.log('func: button S2');
-//  sendCommand('s2');
-//}
-//
-//function consoleButton(e){
-//  console.log('> - - - - - - - - - - - - - - - - - - - - - - - - - - - S');
-//  console.log(`remote: ${e.srcElement.innerText} - ID ${e.srcElement.id}`);
-//  console.log(e);
-//  console.log(e.srcElement);
-//  console.log(e.srcElement.classList);
-//  console.log('> - - - - - - - - - - - - - - - - - - - - - - - - - - - E');
-//
-//  idToFunc[e.srcElement.id]();
-//}
-//
-//// register button click events
-//document.addEventListener("DOMContentLoaded", function(event) {
-//  document.querySelector('.rc-item.rc-start').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-back30s').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-play').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-forward30s').addEventListener('click', consoleButton);;
-//  document.querySelector('.rc-item.rc-end').addEventListener('click', consoleButton);
-//
-//  document.querySelector('.rc-item.rc-back2x').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-volume').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-forward2x').addEventListener('click', consoleButton);
-//  Remote.vol = document.getElementById("rcslid-vol").value;
-//
-//  document.querySelector('.rc-item.rc-s1').addEventListener('click', consoleButton);
-//  document.querySelector('.rc-item.rc-s2').addEventListener('click', consoleButton);
-//});
-//
-//// S1
-//function sendCommand (cmd) {
-//  json_cmd = {
-//    id: movie.id,
-//    path: movie.file_path,
-//    vol: Remote.vol,
-//    cmd: cmd
-//  };
-//  console.log(`sendCommand: ${cmd}`);
-//
-//  fetch(`${window.origin}/play_movie/${movie.id}`, {
-//  //fetch(`/play_movie/${movie.id}`, {
-//      method: "POST",
-//      credentials: "include",
-//      body: JSON.stringify(json_cmd),
-//      cache: "no-cache",
-//      headers: new Headers({
-//        "content-type": "application/json"
-//      })
-//    })
-//    .then(function(response) {
-//      if (response.status !== 200) {
-//        console.log(`Looks like there was a problem. Status code: ${response.status}`);
-//        return;
-//      }
-//      response.json().then(function(data) {
-//        console.log(`sendCommand RX: ${data}`);
-//      });
-//    })
-//    .catch(function(error) {
-//      console.log("Fetch error: " + error);
-//  });
-//
-//}
-//
-//// S2
-//function getStatus ( route=`/play_movie/${movie.id}` ) {
-//
-//}
+});

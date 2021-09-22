@@ -370,7 +370,7 @@ def slider_tests():
             all_slider_movies.append(slider_movie)
 
     # choose a small random set of movies - for quick debug
-    num_of_random_movies = 10
+    num_of_random_movies = 100
     for i in range(num_of_random_movies):
         movies.append(random.choice(all_slider_movies))
 
@@ -381,7 +381,8 @@ def slider_tests():
     print(','.join(genres))
     print("= = = \n")
 
-    return render_template('slider_tests.html', movies=movies)
+    return render_template('slider_tests.html', movies=all_slider_movies)
+    #return render_template('slider_tests.html', movies=movies)
 
 @app.route('/css_course_X', methods=["GET", "POST"])
 def css_course_X():
