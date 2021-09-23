@@ -1,0 +1,368 @@
+{% extends 'nav_buttons_thin.html' %}
+
+{% block header %}
+<title>slider_experiments</title>
+<link rel="stylesheet" href="{{ url_for( 'static', filename='recipe_sliders.css') }}">
+<link rel="stylesheet" href="{{ url_for( 'static', filename='glider.css') }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="./static/recipe_sliders/main.css" />-->
+<script src="static/glider.js"></script>
+<script src="static/recipe_sliders.js"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Nav -->
+<nav id="nav">
+  <ul>
+    <li><a href="#homegrown" class="active">Homegrown</a></li>
+    <li><a href="#sushi">Sushi</a></li>
+    <li><a href="#bread">Bread</a></li>
+    <li><a href="#comfort">Comfort</a></li>
+    <li><a href="#cheese">Cheese</a></li>
+    <li><a href="#make_sroll">How To: Sausage Roll</a></li>
+    <li><a href="#sweet">Desserts</a></li>
+  </ul>
+</nav>
+
+<h2 class="s_exp">
+    <em>Used burger images for crousel data - sliders get it!!! Boom boom!</em>
+</h2>
+<a href='https://github.com/NickPiscitelli/Glider.js'>github.com/NickPiscitelli/Glider.js</a>
+EGS: <a href='https://nickpiscitelli.github.io/Glider.js/'>here</a>
+<h3>
+    Slider Experiments
+</h3>
+<h4>
+    Initial trials with Glider.js
+    <br>
+</h4>
+
+
+<div class="glider-contain" >
+    <div class="slider-title">Recipe Title Cards - testimonial cards - dots on - buttons & rewind<br></div>
+    <div class="glider" id="recipe-titles">
+        <figure>
+            <blockquote>roast beef warm salad w tomatoes sweet pickled gherkins, fruit and nut couscous, & mixed roast veg</blockquote>
+            <figcaption>snapdragonpics</figcaption>
+        </figure>
+        <figure>
+            <blockquote>unrolled fishstick spread w/ mustard and soy sauce, rolled back up! :)</blockquote>
+            <figcaption>carter</figcaption>
+        </figure>
+        <figure>
+            <blockquote>red pepper soup and coriander salsa for a quick lo-cal sauce</blockquote>
+            <figcaption>carter</figcaption>
+        </figure>
+        <figure>
+            <blockquote>thick cut smoked ham w tomato gherkin & couscous topped w red pepper soup sauce and a side of gherkins</blockquote>
+            <figcaption>gabriella</figcaption>
+        </figure>
+        <figure>
+            <blockquote>tomatoes, gherkins, fruit and nut couscous, mixed roast veg and pretty good use of leftovers!</blockquote>
+            <figcaption>carter</figcaption>
+        </figure>
+        <figure>
+            <blockquote>vegetarian orange and fennel jelly, for salads, cheese and terrines</blockquote>
+            <figcaption>gabriella</figcaption>
+        </figure>
+        <figure>
+            <blockquote>almonds toasted until golden in melted butter</blockquote>
+            <figcaption>carter</figcaption>
+        </figure>
+        <figure>
+            <blockquote>mixed green leaves, shredded beetroot, topped with pulses, grains, toasted almonds and orange and fennel jelly</blockquote>
+            <figcaption>snapdragonpics</figcaption>
+        </figure>
+        <figure>
+            <blockquote>warm salad of crispy chicken and avocado</blockquote>
+            <figcaption>gabriella</figcaption>
+        </figure>
+        <figure>
+            <blockquote>crispy chicken and avocado w green leaf and grains</blockquote>
+            <figcaption>snapdragonpics</figcaption>
+        </figure>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="bread">
+    <div class="slider-title">Bread - Always at least 2 images<br></div>
+    <div class="glider" id="bread-g">
+        <div class="fit-box opt-1"><div class="page-no-g3">1</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/000.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">2</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/005.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">3</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/010.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">4</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/015.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">5</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/020.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">6</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/025.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">7</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/030.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">8</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/035.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">9</div> <img alt="Test" src="./static/recipe_sliders/images/img_bread/040.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">10</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/045.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">11</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/050.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">12</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/055.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">13</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/065.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">14</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/070.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">15</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/075.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">16</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/080.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">17</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/085.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">18</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/090.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">19</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/095.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">20</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/100.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">21</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/105.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">22</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/110.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">23</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/115.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">24</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/120.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">24</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/125.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">25</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/130.jpg"></div>
+        <div class="fit-box opt-1"><div class="page-no-g3">26</div><img alt="Test" src="./static/recipe_sliders/images/img_bread/135.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="comfort">
+    <div class="slider-title">Comfort - Simple settings - single image on mobile first<br></div>
+    <div class="glider" id="comfort-g">
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/000.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/005.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/010.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/015.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/020.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/025.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/030.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/035.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/040.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/045.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/050.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/055.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/065.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/070.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/075.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/080.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/085.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/090.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_comfort/095.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="cheese">
+    <div class="slider-title">Cheese<br></div>
+    <div class="glider" id="cheese-g">
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/000.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/005.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/010.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/015.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/020.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/025.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/030.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/035.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_cheese/040.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="make_sroll">
+    <div class="slider-title">How To: Make a Giant Sausage Roll - curved edge image w/ border caption card<br></div>
+    <div class="glider" id="make_sroll-g">
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/000.jpg"><p>Roll the pastry out 1m x 22cm</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/005.jpg"><p>Place sausage meat over the pastry</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/010.jpg"><p>Egg was & fold pastry over</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/015.jpg"><p>Seal the seam w/ a fork</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/020.jpg"><p>All the way along</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/025.jpg"><p>Fold it over so its all and even width</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/030.jpg"><p>Eggwash</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/035.jpg"><p>& use a fork to finish the seal</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/040.jpg"><p>Slice into desired size rolls</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/045.jpg"><p>& add a couple of diagonal cuts</p></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_make_sroll/050.jpg"><p>Place on baking tray lined w/ silpat  & bake on a probe 160C until probe hits 75C</p></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="sweet">
+    <div class="slider-title">Desserts - Fixed 240px - no responsive<br></div>
+    <div class="glider-7" id="sweet-g">
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/000.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/005.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/010.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/015.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/020.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/025.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/030.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/035.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/040.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/045.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/050.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/055.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/065.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/070.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/075.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/080.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/085.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/090.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/095.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/100.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/105.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_sweet/110.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="movies">
+    <div class="slider-title">Top Rated Movies<br></div>
+    <div class="glider" id="movies-g">
+        <div><div class="top-rated-mv">1</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Apollo_11_(2019_film).png"></div>
+        <div><div class="top-rated-mv">2</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Borat_2_poster.jpeg"></div>
+        <div><div class="top-rated-mv">3</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Contact_ver2.jpg"></div>
+        <div><div class="top-rated-mv">4</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Escape_from_the_planet_of_the_apes.jpg"></div>
+        <div><div class="top-rated-mv">5</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Frequencies_(film)_poster.jpg"></div>
+        <div><div class="top-rated-mv">6</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/GameofDeath2FOXDVDcover.jpg"></div>
+        <div><div class="top-rated-mv">7</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Hereditary.png"></div>
+        <div><div class="top-rated-mv">8</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Mean_Streets_original_1973_theatrical_poster.png"></div>
+        <div><div class="top-rated-mv">9</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Solaris2002poster.jpg"></div>
+        <div><div class="top-rated-mv">10</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/The_Laundromat_poster.jpeg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="movies">
+    <div class="slider-title">Top Rated Movies<br></div>
+    <div class="glider" id="movies-g2">
+        <div><div class="top-rated-mv">1</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Apollo_11_(2019_film).png"></div>
+        <div><div class="top-rated-mv">2</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Borat_2_poster.jpeg"></div>
+        <div><div class="top-rated-mv">3</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Contact_ver2.jpg"></div>
+        <div><div class="top-rated-mv">4</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Escape_from_the_planet_of_the_apes.jpg"></div>
+        <div><div class="top-rated-mv">5</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Frequencies_(film)_poster.jpg"></div>
+        <div><div class="top-rated-mv">6</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/GameofDeath2FOXDVDcover.jpg"></div>
+        <div><div class="top-rated-mv">7</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Hereditary.png"></div>
+        <div><div class="top-rated-mv">8</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Mean_Streets_original_1973_theatrical_poster.png"></div>
+        <div><div class="top-rated-mv">9</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/Solaris2002poster.jpg"></div>
+        <div><div class="top-rated-mv">10</div><img alt="Test" src="./static/recipe_sliders/images/wiki_mov/The_Laundromat_poster.jpeg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="homegrown">
+    <div class="slider-title">Homegrown - opt1<br></div>
+    <div class="glider" id="homegrown-g">
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/000.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/005.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/010.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/015.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/020.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/025.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/030.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/035.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/040.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/045.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/050.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/055.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/065.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/070.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/075.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/080.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/085.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/090.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/095.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/100.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/105.jpg"></div>
+        <div class="fit-box opt-1"><img alt="Test" src="./static/recipe_sliders/images/img_hg_veg/110.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div class="glider-contain" id="sushi">
+    <div class="slider-title">Sushi - opt2<br></div>
+    <div class="glider" id='sushi-g'>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/000.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/005.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/010.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/015.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/020.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/025.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/030.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/035.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/040.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/045.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/050.jpg"></div>
+        <div class="fit-box opt-2"><img alt="Test" src="./static/recipe_sliders/images/img_sushi/055.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>
+
+<div id="footer"></div>
+<!--<div class="glider-contain">
+    <div class="glider" >
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/000.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/005.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/010.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/015.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/020.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/025.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/030.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/035.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/040.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/045.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/050.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/055.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/065.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/070.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/075.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/080.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/085.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/090.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/095.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/100.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/105.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/110.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/115.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/120.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/125.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/130.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/135.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/140.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/145.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/150.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/155.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/165.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/170.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/175.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/180.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/185.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/190.jpg"></div>
+        <div><img alt="Test" src="./static/recipe_sliders/images/img_sushi/195.jpg"></div>
+    </div>
+    <button class="glider-prev">&laquo;</button>
+    <button class="glider-next">&raquo;</button>
+    <div id="dots"></div>
+</div>-->
+
+
+{% endblock %}
+
+
+

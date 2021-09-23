@@ -345,6 +345,10 @@ def css_course_7():
     movies = []
     return render_template('css_course_7.html', movies=movies)
 
+@app.route('/slider_tests_rcp', methods=["GET", "POST"])
+def slider_tests_rcp():
+    return render_template('recipe_sliders.html')
+
 @app.route('/slider_tests', methods=["GET", "POST"])
 def slider_tests():
     movies = []

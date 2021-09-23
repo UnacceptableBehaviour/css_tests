@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200&display=swap');
+
+body {
+    background-color: black;
+    color: lightgrey;
+    text-align: left;
+    font-family: arial;
+    font-size: 14px;
+    margin: 0px;
+    border: 1px;
+    padding: 1px 1px 1px 5px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0px;
+    border: 1px;
+    padding: 15px 1px 1px 5px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0px;
+    border: 1px;
+    padding: 15px 1px 1px 5px;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0px;
+    border: 1px;
+    padding: 1px 1px 1px 5px;
+}
+
+p {
+    font-size: 10px;
+    font-style: italic;
+    margin: 0px;
+    border: 1px;
+    padding: 1px 1px 1px 5px;
+}
+
+
+
+#nav {
+	margin:0;
+	padding:0;
+}
+#nav li {               /* remove bullets & displa inline */
+	display:inline;
+	padding:0;
+	margin:20;
+    border-radius: 15px;
+    border: 1px solid #73AD21;
+}
+#nav a:link,
+#nav a:visited {
+	color:#FFFED3;
+	/*padding:6px 6px 6px 6px;*/
+    padding:10px 10px 10px 10px;
+    /*padding:30px 30px 30px 30px;*/
+    line-height: 30px;
+    text-decoration:none;
+}
+
+/*#nav a:link,
+#nav a:visited {
+	color:#000;
+	background:#efefef;
+	padding:4px 4px 4px 4px;
+}*/
+
+/* - - - - - - - - - - - - glider - - - - - - - - - - - - */
+
+.glider-contain {
+    width: 96%;
+    max-width: 997px;
+    margin: 0 auto;
+}
+.glider-slide {
+    min-height: 100px;
+}
+.glider-slide img {
+    width: 100%;
+    /*vertical-align: middle; why no work?*/
+}
+
+
+/* - - - - - - - - - - - - recipe cards - - - - - - - - - - - - */
+
+.slider-title {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 1.5em;
+    border: 1px solid yellowgreen;
+    padding-left: 0.2em;
+    margin-top: 0.4em;
+}
+
+/* get image to fit and all be same size */
+.fit-box img {
+    width: 100%;
+    height: 100%;
+}
+/* fill options */
+.opt-1 img{
+    object-fit: cover;
+}
+.opt-2 img{
+    object-fit: contain;
+}
+.opt-3 img{
+    object-fit: fill;
+}
+
+
+figure {
+    position: relative;
+    margin: 3px;
+    /*border: 1px solid pink;*/
+    font-family: 'Playfair Display', serif;
+    background: #FCF7ED;
+}
+figure > blockquote {
+    /*border: 1px solid green;*/
+    margin: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.25em;
+    font-size: 0.75em;
+    font-style: italic;
+    color: black;
+    text-align: center;
+}
+figure > figcaption {
+    /*border: 1px solid yellow;*/
+    margin: 0.25em;
+    padding: 0.25em;
+    /*padding-right: 1em;*/
+    /*margin-bottom: 1em;*/
+    font-size: 0.6em;
+    color: black;
+    /*font-style: italic;*/
+    /*text-align: right;*/
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0.6em;
+    right: 0.6em;
+}
+
+
+/* div containing whole slider in glider-2 */
+.glider-2 > div {
+    border: 1px solid pink;
+}
+/* div containing images in glider-2 */
+.glider-2 > div > div {
+    border: 1px solid black;
+/*    position: relative;  just pushes all element up 50% doesn't centre
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);*/
+    vertical-align: middle;
+}
+
+/* add a large number - white w/ black outline - over image*/
+#bread-g > div > div {
+    margin: 1px;
+    border: 1px solid grey;
+    /*border-radius: 10px;*/
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;                 /* make all same size as */
+    height: 100%;
+}
+#bread-g > div > div > .page-no-g3 {
+    position: absolute;
+    border: 1px solid purple;
+    font-size: 2em;
+    padding-left: 5px;
+    padding-right: 3px;
+    bottom: 0.1em;
+    left: 0.1em;
+}
+@supports (-webkit-text-stroke: 1px black) {
+  .page-no-g3 {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+  }
+}
+
+
+
+    /* Bottom left text
+      position: absolute;
+      bottom: 8px;
+      left: 16px; */
+
+    /* Top left text
+      position: absolute;
+      top: 8px;
+      left: 16px; */
+
+    /* Top right text
+      position: absolute;
+      top: 8px;
+      right: 16px; */
+
+    /* Bottom right text
+      position: absolute;
+      bottom: 8px;
+      right: 16px; */
+
+    /* Centered text
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);  */
+
+
+/* div containing images in glider-6 sroll instruction cards */
+/* card style - black border - 10pcx radius - image radius TLRHC - bottom flat */
+/* note slightly different border radius on border & image - stop white gap */
+#make_sroll-g > div > div {
+    margin: 1px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+#make_sroll-g > div > div > img { /* #make_sroll > div#make_sroll-g.glider.draggable > div > div:nth-child(3) > img */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+/* text parent #make_sroll > div#make_sroll-g.glider.draggable > div > div:nth-child(3) */
+#make_sroll-g > div > div > p {
+    font-size: 12px;
+    color: white;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+
+/* movies top rated glider images SB 250 * 370 px */
+/* add a large number - white w/ black outline - possible?YES - over image*/
+#movies-g > div > div {
+    margin: 2px;
+    /*border: 1px solid grey;*/
+    /*border-radius: 10px;*/
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#movies-g > div > div > img {
+    margin: 1px;
+    /*border: 1px solid grey;*/
+    border-radius: 6px;
+}
+#movies-g > div > div > .top-rated-mv {
+    position: absolute;
+    /*border: 1px solid purple;*/
+    font-size: 10em;
+    padding-right: 5px;
+    padding-top: 125px;
+}
+@supports (-webkit-text-stroke: 1px black) {
+  .top-rated-mv {
+    -webkit-text-stroke: 2px grey;
+    -webkit-text-fill-color: black;
+  }
+}
+
+
+#movies-g2 > div > div {
+    margin: 2px;
+    /*border: 1px solid grey;*/
+    /*border-radius: 10px;*/
+    position: relative;
+    /*text-align: center;*/
+    color: white;
+}
+#movies-g2 > div > div > img {
+    margin: 1px;
+    /*border: 1px solid grey;*/
+    border-radius: 6px;
+    /*margin-left: 20px*/
+}
+#movies-g2 > div > div > .top-rated-mv {
+    position: absolute;
+    /*border: 1px solid purple;*/
+    font-size: 10em;
+    /*padding-right: 5px;*/
+    /*padding-top: 125px;*/
+    left: -0.15em;
+    bottom: -0.1em;
+    background: linear-gradient(to left,
+     rgba(0,0,0, 1) 5%,
+     rgba(0,0,0, 0) 95%
+    );
+/*    background: -webkit-linear-gradient(#000, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+/* add outline to text / rank no  */
+@supports (-webkit-text-stroke: 1px black) {
+  .top-rated-mv {
+    -webkit-text-stroke: 2px grey;
+    -webkit-text-fill-color: black;
+  }
+}
+/* fade nuber out before previous tile - ALPHA channel gradients */
+/* mask image - size of numeral? */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image */
+
+/* https://stackoverflow.com/questions/14500159/how-to-apply-a-css-gradient-over-a-text-from-a-transparent-to-an-opaque-colour */
+/* https://stackoverflow.com/questions/15597167/css3-opacity-gradient */
+/* https://css-tricks.com/snippets/css/gradient-text/ */
+
+/* use this to frame content to set size and adjust images according to inner div */
+/* https://stackoverflow.com/questions/7273338/how-to-vertically-align-an-image-inside-a-div */
+
+#footer {
+    height: 200px;
+}
