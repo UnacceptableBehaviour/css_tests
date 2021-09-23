@@ -85,8 +85,8 @@ class Slider {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     let qry = `#${id}`;
     window._ = new Glider(document.querySelector(qry), {
-        slidesToShow: 1, //'auto',
-        slidesToScroll: 1,
+        slidesToShow: 4.3, //'auto',
+        slidesToScroll: 4.3,
         itemWidth: 50,
         draggable: true,
         dragVelocity: 3.3,     // default 3.3
@@ -101,17 +101,19 @@ class Slider {
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToScroll: 'auto',
-                    itemWidth: 162,
-                    slidesToShow: 'auto',
-                    exactWidth: true
+                    slidesToScroll: 6.4,
+                    slidesToShow: 6.4,
+                    //slidesToScroll: 'auto',
+                    //itemWidth: 162,
+                    //slidesToShow: 'auto',
+                    //exactWidth: true
                 }
             },
             {
                 breakpoint: 700,
                 settings: {
-                    slidesToScroll: 4,
-                    slidesToShow: 4,
+                    slidesToScroll: 6.4,
+                    slidesToShow: 6.4,
                     dots: false,
                     arrows: false,
                 }
@@ -119,15 +121,15 @@ class Slider {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToScroll: 3,
-                    slidesToShow: 3
+                    slidesToScroll: 5.3,
+                    slidesToShow: 5.3
                 }
             },
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToScroll: 2,
-                    slidesToShow: 2,
+                    slidesToScroll: 4.3,
+                    slidesToShow: 4.3,
                     dots: false,
                     arrows: false,
                     scrollLock: true

@@ -381,8 +381,8 @@ def slider_tests():
     print(','.join(genres))
     print("= = = \n")
 
-    return render_template('slider_tests.html', movies=all_slider_movies)
-    #return render_template('slider_tests.html', movies=movies)
+    #return render_template('slider_tests.html', movies=all_slider_movies)
+    return render_template('slider_tests.html', movies=movies)
 
 @app.route('/css_course_X', methods=["GET", "POST"])
 def css_course_X():
